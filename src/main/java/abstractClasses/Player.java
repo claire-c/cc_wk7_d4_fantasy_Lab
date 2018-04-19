@@ -18,6 +18,9 @@ public class Player {
         return health;
     }
 
+    public void setHealth(int health) {
+        this.health = health;
+    }
 
     public void addToHealth(int pointsToAdd){
         this.health += pointsToAdd;
