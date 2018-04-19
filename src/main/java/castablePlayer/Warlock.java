@@ -3,8 +3,9 @@ package castablePlayer;
 import Enums.Creature;
 import Enums.Spell;
 import abstractClasses.Player;
+import behaviours.ICastable;
 
-public class Warlock extends Player {
+public class Warlock extends Player implements ICastable {
 
     String name;
     int health;
@@ -35,5 +36,9 @@ public class Warlock extends Player {
 
     public void changeSpell(Spell spell){
         this.spell  = spell;
+    }
+
+    public void castSpell(Player player){
+        player.takeDamage(spell.getdamageValue());
     }
 }

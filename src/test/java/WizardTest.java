@@ -1,5 +1,6 @@
 import Enums.Creature;
 import Enums.Spell;
+import castablePlayer.Warlock;
 import castablePlayer.Wizard;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,10 +11,12 @@ import static org.junit.Assert.assertEquals;
 public class WizardTest {
 
     private Wizard wizard;
+    private Warlock warlock;
 
     @Before
     public void before(){
         wizard = new Wizard("Rincewind", Creature.LUGGAGE, Spell.FLATULENCE);
+        warlock = new Warlock("Jimmy", Creature.DRAGON, Spell.FIREBALL);
     }
 
     @Test
@@ -54,5 +57,13 @@ public class WizardTest {
         wizard.changeSpell(Spell.WEDGIE);
         assertEquals(Spell.WEDGIE, wizard.getSpell());
     }
+
+    @Test
+    public void canCastSpell(){
+        wizard.castSpell(warlock);
+        assertEquals(90, warlock.getHealth());
+    }
+
+
 
 }

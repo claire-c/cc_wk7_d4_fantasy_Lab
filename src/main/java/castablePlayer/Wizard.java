@@ -3,8 +3,9 @@ package castablePlayer;
 import Enums.Creature;
 import Enums.Spell;
 import abstractClasses.Player;
+import behaviours.ICastable;
 
-public class Wizard extends Player {
+public class Wizard extends Player implements ICastable{
     String name;
     int health;
     Creature creature;
@@ -35,6 +36,10 @@ public class Wizard extends Player {
     public void changeSpell(Spell spell) {
         this.spell = spell;
 
+    }
+
+    public void castSpell(Player player){
+        player.takeDamage(spell.getdamageValue());
     }
 
 }
