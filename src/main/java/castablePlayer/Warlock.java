@@ -17,9 +17,23 @@ public class Warlock extends Player {
         this.spell = spell;
     }
 
+    public Creature getCreature(){
+        return creature;
+    }
 
+    public Spell getSpell(){
+        return spell;
+    }
 
+    public void fly(){
+        takeDamage(5);
+    }
 
+    public void changeCreature(Creature creature){
+        this.creature = creature;
+    }
 
-
+    public void changeSpell(Spell spell){
+        this.spell  = spell;
+    }
 }
