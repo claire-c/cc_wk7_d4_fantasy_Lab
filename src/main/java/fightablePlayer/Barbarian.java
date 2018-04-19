@@ -28,7 +28,7 @@ public class Barbarian extends Player implements IFightable{
     }
 
     public void changeWeapon(Weapon weapon){
-
+        this.weapon = weapon;
     }
 
     public void berserkerRage(Player player){

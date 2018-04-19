@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 public class BarbarianTest {
 
@@ -43,6 +44,11 @@ public class BarbarianTest {
         assertEquals(0, barbarian.getHealth());
     }
 
+    @Test
+    public void canChangeWeapon(){
+        barbarian.changeWeapon(Weapon.AXE);
+        assertEquals(Weapon.AXE, barbarian.getWeapon());
+    }
 
 
 }
